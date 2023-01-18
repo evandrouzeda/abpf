@@ -1,0 +1,1 @@
+export interface ListParam{ adapter: string; title: string; list: any[] }

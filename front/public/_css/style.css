@@ -368,16 +368,6 @@ form .footer button {
     border-radius: .5em;
 }
 
-nav {
-    background-color: #e8d9ff;
-}
-
-nav a {
-    display: grid;
-    align-content: center;
-    justify-content: center;
-}
-
 .show {
     color: var(--color-primary-contrast);
     padding-left: 10px;
@@ -397,11 +387,36 @@ nav a {
 main {
     grid-template-columns: var(--grid-columns);
     gap: var(--grid-gap);
+    row-gap: 0;
+    margin-top: 1em;
 }
 
 main header {
     grid-column-start: 3;
-    grid-column-end: span 8;
+    grid-column-end: span 3;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header img {
+    width: 210px;
+}
+
+nav {
+    display: flex;
+    grid-column-start: 8;
+    grid-column-end: span 3;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav a {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #b3b3b3;
+    cursor: pointer;
+    padding: 15px;
 }
 
 section.container {
@@ -417,6 +432,7 @@ section.container img {
     height: 100%;
     object-fit: cover;
 }
+
 section.container h2 {
     font-size: 3.6em;
     color: #0378A6;
@@ -431,7 +447,7 @@ section.container.txt-img img {
     grid-area: 3/ 9/ span 14/ span 8;
 }
 
-section.container.txt-img h2 { 
+section.container.txt-img h2 {
     grid-area: 5/3/span 10/span 7;
 }
 
@@ -439,6 +455,11 @@ section.container.txt-bg-img {
     grid-column-start: 2;
     grid-column-end: span 10;
     grid-template-rows: repeat(12, 40px);
+}
+
+section.container.txt-bg-img img {
+    grid-area: 1/1/span 12/span 18;
+    opacity: .1;
 }
 
 section.container.txt-bg-img h2 {
@@ -465,4 +486,3 @@ span.second {
 span.third {
     color: #85A63F
 }
-

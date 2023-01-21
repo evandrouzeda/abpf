@@ -13,7 +13,12 @@ export default class Inicio implements Page {
     async create() {
         return Z("main").class("d-grid").children(
             Z("header").class("header").children(
-                Z("h1").atrib("style", "grid-column-start: 3;grid-column-end: span 8;").text("Aliança Bíblica em Passo Fundo")
+                Z("img").atrib("src", "https://abiblicapf.org/_img/logo-grande.png"),
+            ),
+            Z("nav").children(
+                Z("a").text("Início"),
+                Z("a").text("Estudos"),
+                Z("a").text("Membro"),
             ),
             Z("section").class("container", "txt-img").children(
                 Z("div").class("shadow").atrib("style", "background-color: #85A63F;"),
@@ -28,6 +33,7 @@ export default class Inicio implements Page {
                 )
             ),
             Z("section").class("container", "txt-bg-img").children(
+                Z("img").atrib("src", "/_img/biblia.png"),
                 Z("h2").children(`Vivendo segundo a `, Z("span").class("second").text("Bíblia"))
             ),
             Z("section").class("container", "img-txt").children(

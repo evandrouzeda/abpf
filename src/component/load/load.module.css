@@ -1,0 +1,17 @@
+.load {
+    height: 30px;
+    width: 30px;
+    border-bottom: solid;
+    border-radius: 50%;
+    animation: rotation .8s cubic-bezier(.22, .34, 1, .51) infinite;
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg)
+    }
+
+    100% {
+        transform: rotate(360deg)
+    }
+}

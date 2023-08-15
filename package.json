@@ -4,13 +4,25 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js & cd ./front/ && npm run dev"
+    "dev": "./run 'node server.js' 'npx webpack -w'",
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "socket.io-client": "^4.6.1",
+    "zeyo": "github:zeyodev/zeyo"
   },
-  "type": "module"
+  "type": "module",
+  "devDependencies": {
+    "css-loader": "^6.7.3",
+    "style-loader": "^3.3.2",
+    "ts-loader": "^9.4.2",
+    "typescript": "^4.9.5",
+    "typescript-plugin-css-modules": "^5.0.0",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1"
+  }
 }

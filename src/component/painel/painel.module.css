@@ -1,0 +1,97 @@
+:root {
+    --widget-columns: 16;
+    --columns-fit-l: 4;
+    --columns-fit-m: 2;
+    --columns-fit-s: 1;
+}
+
+@media (max-width: 992px) {
+    :root {
+        --widget-columns: 8;
+        --columns-fit-l: 8;
+        --columns-fit-m: 4;
+        --columns-fit-s: 2;
+    }
+}
+
+.container {
+    display: grid;
+    gap: 0.7em;
+    grid-template-columns: repeat(var(--widget-columns), 1fr);
+    grid-auto-rows: 1em;
+}
+
+.card .container {
+    grid-template-columns: repeat(8, 1fr);
+}
+
+.column-full {
+    grid-column-end: span var(--widget-columns);
+}
+
+.column-half {
+    grid-column-end: span calc(var(--widget-columns) / 2);
+}
+
+.column-2half {
+    grid-column-end: span 2;
+}
+
+.column-fit-l {
+    grid-column-end: span var(--columns-fit-l);
+}
+
+.column-fit-m {
+    grid-column-end: span var(--columns-fit-m);
+}
+
+.column-fit-s {
+    grid-column-end: span var(--columns-fit-s);
+}
+
+/*--columns-fit-l: 8;
+        --columns-fit-m: 4;
+        --columns-fit-s: 2;*/
+.card .column-fit-l {
+    grid-column-end: span 8;
+}
+
+.card .column-fit-m {
+    grid-column-end: span 4;
+}
+
+.card .column-fit-s {
+    grid-column-end: span 2;
+}
+
+.row-one {
+    grid-row-end: span 1;
+}
+
+.row-two {
+    grid-row-end: span 2;
+}
+
+.row-three {
+    grid-row-end: span 3;
+}
+
+.row-four {
+    grid-row-end: span 4;
+}
+
+.row-five {
+    grid-row-end: span 5;
+}
+
+.row-six {
+    grid-row-end: span 6;
+}
+
+.row-13 {
+    grid-row-end: span 13;
+}
+
+.row-mc {
+    grid-template-rows: min-content;
+}

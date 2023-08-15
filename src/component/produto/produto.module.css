@@ -1,0 +1,125 @@
+.produto {
+    cursor: pointer;
+    background: white;
+    border-radius: .5em;
+    padding: .5em;
+    display: grid;
+    align-content: space-between;
+    width: min-content;
+}
+
+.produto img {
+    height: min(35vw, 200px);
+    width: min(35vw, 200px);
+    object-fit: cover;
+    border-radius: .5em;
+}
+
+.vertical.produto {
+    width: inherit;
+}
+
+.vertical.produto img {
+    width: 100%;
+}
+
+.produto .text {
+    padding: 0 .5em .5em;
+}
+
+.produto .restaurante {
+    color: #aaa;
+}
+
+.produto .restaurante svg {
+    width: 20px;
+}
+
+:root {
+    --modal-width: min(600px, calc(100vw - 2em));
+}
+
+@keyframes enter {
+    0% {transform: translate(0, 100%); opacity: 0;}
+    100% {transform: translate(0, 0); opacity: 1;}
+}
+
+.modal {
+    background-color: white;
+    border-radius: 1em;
+    width: var(--modal-width);
+    min-height: 80vh;
+    min-height: 80dvh;
+    position: absolute;
+    bottom: 1em;
+    grid-template-rows: auto 25vh auto;
+    align-content: space-between;
+    max-height: 95vh;
+    max-height: 95dvh;
+    gap: 1em;
+    animation: enter .2s;
+}
+
+.modal .header {
+    padding: 1em;
+}
+
+.modal .text {
+    padding: 0;
+}
+
+.modal .body {
+    padding: 0 1em;
+    overflow-y: scroll;
+}
+
+.modal .footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1em 1em;
+    gap: 1em;
+}
+
+.modal .footer svg {
+    width: 30px;
+}
+
+.modal .footer button {
+    border: none;
+    padding: .8em;
+    font-size: 1em;
+    border-radius: .5em;
+    width: 100%;
+}
+
+.modal img {
+    width: 100%;
+    border-radius: .5em;
+    height: 40vh;
+    object-fit: cover;
+}
+
+.modal .back {
+    position: absolute;
+    background-color: white;
+    padding: .5em;
+    border-radius: 0 0 .5em 0;
+    width: 35px;
+    height: 35px;
+    top: 1em;
+    left: 1em;
+}
+
+.modal .back:active {
+    background-color: lightgray;
+}
+
+.modal table.horario {
+    margin-left: 2em;
+    display: none;
+}
+
+.modal table.horario.show {
+    display: table;
+}

@@ -1,0 +1,68 @@
+:root {
+    --widget-columns: 16;
+    --columns-fit-l: 4;
+    --columns-fit-m: 2;
+    --columns-fit-s: 1;
+    --column-size: 5.712vw;
+    --column-count: 12;
+    --gap-size: 2.857vw;
+    --grid-columns: repeat(var(--column-count), var(--column-size));
+    --grid-gap: var(--gap-size);
+    --grid-area-full: 1/1/span 1/span var(--column-count);
+    --grid-area-side-bar: 1/1/span 1/span 3;
+    --hidde-side-bar: translate(-22.85vw);
+}
+
+.content {
+    grid-template-rows: min-content;
+}
+
+.layout {
+    display: grid;
+    grid-template-columns: var(--grid-columns);
+    height: 100vh;
+    height: 100svh;
+    gap: var(--grid-gap);
+}
+
+.menu {
+    grid-area: var(--grid-area-side-bar);
+    display: grid;
+    grid-template-columns: repeat(3, var(--column-size));
+    gap: var(--gap-size);
+}
+
+.menu .navigation {
+    grid-area: 1/1/span 1/span 2;
+    padding: 1em;
+}
+
+.navigation nav {
+    display: grid;
+    align-content: start;
+    margin-top: 2em;
+}
+
+.navigation nav a {
+    padding: .5em;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    transition: .2s;
+}
+
+.navigation nav a:hover {
+    background-color: #f3cbff;
+}
+.menu .icon {
+    grid-area: 1/2;
+}
+
+.main {
+    grid-area: 1/4/span 1/span calc(var(--column-count) - 3);
+}
+
+.dash {
+    padding: 1rem;
+    background-color: var(--color-primary-contrast);
+}

@@ -1,0 +1,33 @@
+:root {
+    --color-primary: #4e23d8;
+    --color-primary-rgb: 78, 35, 216;
+    --color-primary-contrast: #fff;
+    --color-primary-contrast-rgb: 0, 0, 0;
+    --color-primary-fade: rgba(var(--color-primary-rgb), 0.37);
+    --color-accent: #1e1926;
+    --color-accent-contrast: white;
+    /* --color-secudary: ;
+    --color-tertiary: ; */
+    --screen-background: #f2f2f2;
+    --screen-color: var(--color-accent);
+    --card-background: white;
+    --card-background-tint: rgb(250, 250, 250);
+    --card-color: black;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-primary: #4e23d8;
+        --color-primary-rgb: 78, 35, 216;
+        --color-primary-contrast: #fff;
+        --color-primary-contrast-rgb: 0, 0, 0;
+        --color-primary-fade: rgba(var(--color-primary-rgb), 0.87);
+        /* --color-secudary: ;
+        --color-tertiary: ; */
+        --screen-background: rgb(36, 36, 36);
+        --screen-color: var(--color-accent-contrast);
+        --card-background: rgb(30, 30, 30);
+        --card-background-tint: rgb(64, 64, 64);
+        --card-color: white;
+    }
+}

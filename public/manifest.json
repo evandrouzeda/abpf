@@ -1,0 +1,61 @@
+{
+    "dir": "ltr",
+    "lang": "de",
+    "name": "Alas Menu",
+    "scope": "/",
+    "display": "standalone",
+    "start_url": "/",
+    "short_name": "Alas",
+    "theme_color": "#f0f0f0",
+    "orientation": "any",
+    "background_color": "#f0f0f0",
+    "categories": [
+        "pwa",
+        "food",
+        "menu"
+    ],
+    "generated": "true",
+    "intent_filters": {
+        "scope_url_scheme": "https",
+        "scope_url_host": "alasmenu.evandrouzeda.com",
+        "scope_url_path": "/"
+    },
+    "icons": [
+        {
+            "src": "_img/icons/icon-72x72.png",
+            "sizes": "72x72"
+        },
+        {
+            "src": "_img/icons/icon-96x96.png",
+            "sizes": "96x96"
+        },
+        {
+            "src": "_img/icons/icon-128x128.png",
+            "sizes": "128x128"
+        },
+        {
+            "src": "_img/icons/icon-192x192.png",
+            "sizes": "192x192"
+        },
+        {
+            "src": "_img/icons/icon-384x384.png",
+            "sizes": "384x384"
+        },
+        {
+            "src": "_img/icons/icon-512x512.png",
+            "sizes": "512x512"
+        }
+    ],
+    "screenshots": [
+        {
+            "src": "_img/screenshots/screen1.png",
+            "sizes": "750x1334",
+            "type": "image/png"
+        },
+        {
+            "src": "_img/screenshots/screen2.png",
+            "sizes": "750x1334",
+            "type": "image/png"
+        }
+    ]
+}

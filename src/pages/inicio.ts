@@ -1,6 +1,5 @@
 import Z from "zeyo";
 import Page from ".";
-import App from "../app";
 
 export default class Inicio extends Page {
     route: string = "/";

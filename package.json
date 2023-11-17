@@ -12,11 +12,13 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.18.2",
+    "leaflet": "^1.9.4",
     "socket.io-client": "^4.6.1",
     "zeyo": "github:zeyodev/zeyo"
   },
   "type": "module",
   "devDependencies": {
+    "@types/leaflet": "^1.9.4",
     "css-loader": "^6.7.3",
     "style-loader": "^3.3.2",
     "ts-loader": "^9.4.2",

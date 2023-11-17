@@ -1,5 +1,6 @@
 import Z from "zeyo";
 import Page from ".";
+import L from "leaflet";
 
 export default class Inicio extends Page {
     route: string = "/";
@@ -9,6 +10,13 @@ export default class Inicio extends Page {
     params?: { [key: string]: string; };
     main = Z("main");
     async create() {
+        (async () => {
+            await new Promise(res => {
+                setTimeout(() => res(""), 2000)
+            })
+            const map = L.map('map').setView([51.505, -0.09], 13);
+            console.log(map)
+        })();
         return Z("main").class("d-grid").children(
             Z("header").class("header").children(
                 Z("img").attribute("src", "https://abiblicapf.org/_img/logo-grande.png"),
@@ -52,7 +60,8 @@ export default class Inicio extends Page {
                 Z("div"),
                 Z("div"),
                 Z("div"),
-            )
+            ),
+            Z("div").set("id", "map")
         )
     }
 }

@@ -1,6 +1,7 @@
 import Z, { Zeyo } from "zeyo";
 import Page from ".";
-import style from "./inicio.module.css"
+import style from "./inicio.module.css";
+import L from "leaflet";
 
 export default class Root extends Page {
     route: string = "/"
@@ -10,6 +11,17 @@ export default class Root extends Page {
     params?: { [key: string]: string; } | undefined;
     main: Zeyo = Z("div");
     async create(obj?: any): Promise<Zeyo> {
+        (async () => {
+            await new Promise(res => {
+                setTimeout(() => res(""), 1000)
+            })
+            const map = L.map('map').setView([-28.273433, -52.384293], 17);
+            const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                maxZoom: 19,
+                attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+            }).addTo(map);
+            console.log(map)
+        })();
         return this.main = Z("main").class("d-grid", "jc-center").children(
             Z("header").class(style.header).children(
                 Z("img").attribute("src", "https://abiblicapf.org/_img/logo-grande.png"),
@@ -53,7 +65,8 @@ export default class Root extends Page {
                 Z("div"),
                 Z("div"),
                 Z("div"),
-            )
+            ),
+            Z("div").set("id", "map").set("style", (" height: 600px; width: 100%" as any))
         )
     }
 }

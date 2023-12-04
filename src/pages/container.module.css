@@ -1,0 +1,54 @@
+.grid {
+    --padding-inline: 1rem;
+    --content-max-width: 960px;
+    --breakout-max-width: 1300px;
+    --breakout2-max-width: 1500px;
+    --breakout-size: calc((var(--breakout-max-width) - var(--content-max-width)) / 2);
+    --breakout2-size: calc((var(--breakout2-max-width) - var(--content-max-width)) / 2);
+    --full-width: minmax(var(--padding-inline), 1fr);
+    --breakout: minmax(0, var(--breakout-size));
+    --breakout2: minmax(0, var(--breakout2-size));
+    --column-count: 12;
+    display: grid;
+    
+    grid-template-columns: 
+        [full-width-start] var(--full-width)
+        [breakout2-start] var(--breakout2)
+        [breakout-start] var(--breakout)
+        [content-start] 
+            repeat(var(--column-count), minmax(0, 80px))
+        [content-end]
+        var(--breakout) [breakout-end]
+        var(--breakout2) [breakout2-end]
+        var(--full-width) [full-width-end];
+}
+
+.grid > :not(.breakout, .full-width),
+.full-width > :not(.breakout, .full-width) {
+    grid-column: content;
+}
+
+.grid > :not(.breakout, .full-width, .free),
+.full-width > :not(.breakout, .full-width, .free) {
+    display: grid;
+    grid-template-columns: subgrid;
+    align-items: center;
+}
+
+.grid > .breakout,
+.full-width > .breakout {
+    grid-column: breakout;
+}
+
+.grid > .breakout2,
+.full-width > .breakout2 {
+    grid-column: breakout2;
+}
+
+.grid > .full-width,
+.full-width > .full-width {
+    grid-column: full-width;
+
+    display: grid;
+    grid-template-columns: inherit;
+}

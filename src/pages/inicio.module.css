@@ -29,7 +29,7 @@ span.third {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: 40px;
+    margin: 40px 0 40px 0;
 }
 
 .header img {
@@ -43,28 +43,53 @@ span.third {
     font-size: 1.2em;
 }
 
-.container {
-    display: grid;
-    grid-template-columns: repeat(12, 75px);
-    gap: 30px;
+.hero > :first-child {
+    grid-column-start: 1;
+  grid-row-start: 1;
+  grid-column-end: span 5;
+  z-index: 1;
+  font-size: 3em;
+}
+
+.hero > :last-child {
+    grid-column-start: 5;
+  grid-column-end: span 8;
+  width: 100%;
+  grid-row-start: 1;
+  height: 540px;
+  object-fit: cover;
+}
+
+.smash {
     align-items: center;
 }
 
-.container .first-text {
-    grid-column-start: 2;
-    grid-row-start: 1;
-    grid-column-end: span 5;
-    z-index: 1;
-    font-size: 3em;
+.smash > * {
+    grid-row: 1;
+    width: 100%;
+    text-align: center;
 }
 
-.container .second-img {
-    grid-column-start: 6;
-    grid-column-end: span 6;
-    width: 100%;
-    grid-row-start: 1;
-    height: 80%;
+.smash .center-text {
+    grid-column-start: 5;
+    grid-column-end: span 4;
+    font-size: 2.5em;
+    text-align: center;
+    grid-row: 1;
+}
+
+.smash > img {
+    height: 530px;
     object-fit: cover;
+    opacity: 0.1;
+    z-index: -1;
+    object-position: 10% 12%;
+}
+
+.smash .center-gradient {
+    background: linear-gradient(0deg, rgb(255, 255, 255) 0%, rgba(255,255,255,0) 80%);
+    opacity: 1;
+    height: 100%;
 }
 
 .container.overflow {
@@ -84,18 +109,6 @@ span.third {
     object-position: 10% 22%;
 }
 
-.container .center-gradient {
-    background: linear-gradient(0deg, rgb(255, 255, 255) 0%, rgba(255,255,255,0) 80%);
-    opacity: 1;
-}
-
-.container .center-text {
-    grid-column-start: 5;
-    grid-column-end: span 4;
-    font-size: 2.5em;
-    text-align: center;
-    grid-row: 1;
-}
 
 .container .shadow {
     background-color: #545454;

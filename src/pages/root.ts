@@ -21,6 +21,17 @@ export default class Root extends Page {
                 maxZoom: 19,
                 attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
             }).addTo(map);
+            const greenIcon = L.icon({
+                iconUrl: '/_img/iconelocal.png',
+                shadowUrl: '',
+    
+                iconSize: [45, 45], // size of the icon
+                shadowSize: [50, 64], // size of the shadow
+                iconAnchor: [22, 15], // point of the icon which will correspond to marker's location
+                shadowAnchor: [4, 62],  // the same for the shadow
+                popupAnchor: [-3, -76] // point from which the popup should open relative to the iconAnchor
+            });
+            L.marker([-28.273433, -52.384293], {icon: greenIcon}).addTo(map);
             console.log(map)
         })();
         const clipboard = new window.ClipboardEvent("text")

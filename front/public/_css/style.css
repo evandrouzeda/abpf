@@ -373,16 +373,7 @@ form .footer button {
     padding-left: 10px;
 }
 
-:root {
-    --column-size: 5.712vw;
-    --column-count: 12;
-    --gap-size: 2.857vw;
-    --grid-columns: repeat(var(--column-count), var(--column-size));
-    --grid-gap: var(--gap-size);
-    --grid-area-full: 1/1/span 1/span var(--column-count);
-    --grid-area-side-bar: 1/1/span 1/span 3;
-    --hidde-side-bar: translate(-22.85vw)
-}
+
 
 main {
     grid-template-columns: var(--grid-columns);

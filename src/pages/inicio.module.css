@@ -9,8 +9,18 @@
     --hidde-side-bar: translate(-22.85vw)
 }
 
+.bg-primary {
+    background-color: #0378A6;
+    color: white;
+}
+
 .primary {
     color: #0378A6;
+}
+
+.bg-second {
+    background-color: #F27F3D;
+    color: white
 }
 
 span.second {
@@ -23,6 +33,10 @@ span.second-tint {
 
 span.third {
     color: #85A63F
+}
+
+.lighter {
+    font-weight: lighter;
 }
 
 .header {
@@ -43,28 +57,28 @@ span.third {
     font-size: 1.2em;
 }
 
-.hero > :first-child {
+.hero> :first-child {
     grid-column-start: 1;
-  grid-row-start: 1;
-  grid-column-end: span 5;
-  z-index: 1;
-  font-size: 3em;
+    grid-column-end: span 5;
+    grid-row-start: 1;
+    z-index: 1;
+    font-size: 3em;
 }
 
-.hero > :last-child {
+.hero> :last-child {
     grid-column-start: 5;
-  grid-column-end: span 8;
-  width: 100%;
-  grid-row-start: 1;
-  height: 540px;
-  object-fit: cover;
+    grid-column-end: span 8;
+    grid-row-start: 1;
+    width: 100%;
+    height: 540px;
+    object-fit: cover;
 }
 
 .smash {
     align-items: center;
 }
 
-.smash > * {
+.smash>* {
     grid-row: 1;
     width: 100%;
     text-align: center;
@@ -78,7 +92,7 @@ span.third {
     grid-row: 1;
 }
 
-.smash > img {
+.smash>img {
     height: 530px;
     object-fit: cover;
     opacity: 0.1;
@@ -87,7 +101,7 @@ span.third {
 }
 
 .smash .center-gradient {
-    background: linear-gradient(0deg, rgb(255, 255, 255) 0%, rgba(255,255,255,0) 80%);
+    background: linear-gradient(0deg, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0) 80%);
     opacity: 1;
     height: 100%;
 }
@@ -110,137 +124,107 @@ span.third {
 }
 
 
-.container .shadow {
+.even .shadow {
     background-color: #545454;
     grid-column: 6/ span 7;
     grid-row: 1;
     height: 55%;
     width: 100%;
+    z-index: -1;
 }
 
-.container .left-img {
-    grid-row: 1;
-    grid-column: 1/ span 6;
+.even>img {
     width: 100%;
-    height: 86%;
+    height: 615px;
     object-fit: cover;
 }
 
-.container .right-text {
-    grid-column: 8/ span 4;
-    font-size: 2.5em;
+.even> :first-child {
     grid-row: 1;
+    grid-column: 1/ span 6;
+}
+
+.even>h2 {
+    font-size: 2.5em;
     color: #F8F8F8;
 }
 
-.container .center-text-l {
-    grid-column: 4/ span 6;
-    font-size: 2.5em;
-    text-align: center;
+.even> :last-child {
     grid-row: 1;
-    color: #0378A6;
+    grid-column: 8/ span 4;
 }
 
-/* essa é a configuracao preliminar os elementos na resolucao mobile */
-@media (max-width: 1350px) {
+.center {
+    min-height: 400px;
+    justify-content: center;
+    justify-items: center;
+    align-content: center;
+    align-items: center;
+}
+
+.center>h2 {
+    grid-column: 3/ span 8;
+    font-size: 2.5em;
+    text-align: center;
+}
+
+.even-columns> :first-child {
+    grid-column: 1/ span 6;
+}
+
+.even-columns> :last-child {
+    grid-column: 7/ span 6;
+}
+
+footer .about {
+    display: grid;
+    justify-content: space-between;
+    align-content: space-between;
+    height: calc(100% - 4em);
+    grid-column: 7/ span 5;
+    padding: 2em;
+    gap: 1.5em;
+}
+
+.about a.button {
+    background-color: #85a63f;
+    color: white;
+    border: none;
+    padding: .5em;
+    font-size: 1em;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+}
+
+.map {
+    height: 450px;
+  width: 100%;
+  position: relative;
+}
+
+a svg {
+    fill: #f27f3d;
+    background-color: white;
+    border-radius: 50%;
+    width: 45px;
+}
+
+
+@media (max-width: 825px) {
+    .hero> *,
+    .center>h2,
+    .even-columns> *,
+    .even> * {
+        grid-column: 1/-1 !important;
+    }
+
     .header {
         display: grid;
-        align-items: center;
-        justify-content: center;
-        /*! margin-top: 40px; */
     }
-    
-    .header img {
-        width: 230px;
-    }
-    
-    .header nav {
-        width: 30%;
-        font-weight: bold;
-        color: #8D8D8D;
-        font-size: 1.2em;
-    }
-    
-    .container {
-        display: grid;
-        grid-template-columns: repeat(8, 1fr);
-        gap: 15px;
-        align-items: center;
-    }
-    
-    .container .first-text {
-        grid-column: 1/span 8;
-        grid-row: 1 / span 3;
-        z-index: 1;
-        font-size: 2em;
-        padding: .5em;
-    }
-    
-    .container .second-img {
-        grid-column: 1 / span 8;
-        width: 100%;
-        grid-row: 3/ span 5;
-        height: 295px;
-        object-fit: cover;
-    }
-    
-    .container.overflow {
-        position: relative;
-        justify-content: center;
-        justify-items: center;
-        height: 210px;
-    }
-    
-    .container .center-img {
-        position: absolute;
-        width: 100vw;
-        height: 182px;
-        opacity: 0.2;
-        z-index: -1;
-        object-fit: cover;
-        object-position: 50% -31%;
-    }
-    
-    .container .center-gradient {
-        background: linear-gradient(0deg, rgb(255, 255, 255) 0%, rgba(255,255,255,0) 80%);
-        opacity: 1;
-    }
-    
-    .container .center-text {
-        grid-column: 2 / span 6;
-        font-size: 2em;
-        text-align: center;
-        grid-row: 1;
-    }
-    
-    .container .shadow {
-        background-color: #545454;
-        grid-column: 1/ span 8;
-        grid-row: 2 / span 7;
-        height: 100%;
-        width: 100%;
-    }
-    
-    .container .left-img {
-        grid-row: 1 / span 3;
-        grid-column: 2/ span 6;
-        width: 100%;
-        height: 86%;
-        object-fit: cover;
-    }
-    
-    .container .right-text {
-        grid-column: 2/ span 6;
-        font-size: 2em;
-        grid-row: 4 / span 2;
-        color: #F8F8F8;
-    }
-    
-    .container .center-text-l {
-        grid-column: 1/ span 8;
-        font-size: 2em;
-        text-align: center;
-        grid-row: 1;
-        color: #0378A6;
+
+    .map {
+        height: 330px;
+        margin-top: 1.5em;
     }
 }

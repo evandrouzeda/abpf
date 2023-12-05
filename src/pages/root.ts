@@ -16,7 +16,7 @@ export default class Root extends Page {
             await new Promise(res => {
                 setTimeout(() => res(""), 1000)
             })
-            const map = L.map('map').setView([-28.273433, -52.384293], 17);
+            const map = L.map('map').setView([-28.273562363919524, -52.38432481523411], 17);
             const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
                 maxZoom: 19,
                 attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
@@ -25,13 +25,13 @@ export default class Root extends Page {
                 iconUrl: '/_img/iconelocal.png',
                 shadowUrl: '',
     
-                iconSize: [45, 45], // size of the icon
+                iconSize: [50, 50], // size of the icon
                 shadowSize: [50, 64], // size of the shadow
-                iconAnchor: [22, 15], // point of the icon which will correspond to marker's location
+                iconAnchor: [25, 50], // point of the icon which will correspond to marker's location
                 shadowAnchor: [4, 62],  // the same for the shadow
                 popupAnchor: [-3, -76] // point from which the popup should open relative to the iconAnchor
             });
-            L.marker([-28.273433, -52.384293], {icon: greenIcon}).addTo(map);
+            L.marker([-28.273562363919524, -52.38432481523411], {icon: greenIcon}).addTo(map);
             console.log(map)
         })();
         const clipboard = new window.ClipboardEvent("text")

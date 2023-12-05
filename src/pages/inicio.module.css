@@ -199,8 +199,8 @@ footer .about {
 
 .map {
     height: 450px;
-  width: 100%;
-  position: relative;
+    width: 100%;
+    position: relative;
 }
 
 a svg {
@@ -212,15 +212,66 @@ a svg {
 
 
 @media (max-width: 825px) {
-    .hero> *,
+
+    .hero>*,
+    .smash .center-text,
     .center>h2,
-    .even-columns> *,
-    .even> * {
+    .even>h2 {
+        font-size: 2em;
+    }
+
+    .hero>*,
+    .smash .center-text,
+    .center>h2,
+    .even-columns>* {
         grid-column: 1/-1 !important;
+    }
+
+    .hero> :first-child {
+        grid-row: 1 / span 3;
+        padding: .5em;
+        font-size: 2em;
+    }
+
+    .hero> :last-child {
+        grid-row: 3/ span 5;
+        height: 290px;
+    }
+
+    .smash>img {
+        height: 370px;
+        object-position: 50% 12%;
+    }
+
+    .even {
+        grid-template-rows: repeat(5, 1fr);
+    }
+    .even> :first-child {
+        grid-row: 1 / span 3;
+        height: 100%;
+        grid-column: 2 / -2 !important;
+    }
+
+    .even>.shadow {
+        grid-row: 2 / span 7;
+        height: 100%;
+        grid-column: 1/ -1;
+    }
+
+    .even>:last-child {
+        grid-row: 4 / span 2;
+        grid-column: 2/ -2 !important;
     }
 
     .header {
         display: grid;
+        justify-content: center;
+        justify-items: center;
+    }
+
+    .header nav {
+        width: 100%;
+        gap: 1.5em;
     }
 
     .map {
